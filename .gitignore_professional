@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+build/
+dist/
+*.egg-info/
+
+# Data & Models (Large Files)
+# We ignore the actual parquet files to keep the repo lean, 
+# or use Git LFS if the client needs them directly.
+data/archive/*.parquet
+models/*.keras
+models/*.joblib
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.flaskenv
