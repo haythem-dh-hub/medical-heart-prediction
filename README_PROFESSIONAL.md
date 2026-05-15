@@ -40,7 +40,7 @@ medical-heart-prediction/
 ### 2. Environment Setup
 ```powershell
 # Clone the repository
-git clone https://github.com/your-username/medical-heart-prediction.git
+git clone https://github.com/haythem-dh-hub/medical-heart-prediction.git
 cd medical-heart-prediction
 
 # Create and activate virtual environment
