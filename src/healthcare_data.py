@@ -98,6 +98,8 @@ def load_medical_records(target_rows: int = 100000, file_path: str | None = None
             records["chol"] = rng.normal(235, 45, len(records)).clip(140, 500).astype(int)
         if "thalach" not in records.columns:
             records["thalach"] = rng.normal(150, 25, len(records)).clip(70, 205).astype(int)
+        if "oldpeak" not in records.columns:
+            records["oldpeak"] = rng.normal(1.2, 0.8, len(records)).clip(0, 6).round(2)
 
         if "glucose" not in records.columns:
             records["glucose"] = rng.integers(70, 240, len(records))

@@ -19,6 +19,27 @@ APP_CSS = """
     color: #e5f5ff;
 }
 
+/* RTL Support for Arabic */
+.rtl-container {
+    direction: rtl;
+    text-align: right;
+}
+.rtl-container .glass-card, 
+.rtl-container .hero, 
+.rtl-container .friendly-note,
+.rtl-container .step-card {
+    text-align: right !important;
+}
+.rtl-container .metric-label,
+.rtl-container .metric-value,
+.rtl-container .metric-note {
+    text-align: right !important;
+}
+.rtl-container .pipeline-grid,
+.rtl-container .metric-grid {
+    direction: rtl !important;
+}
+
 .stApp::before {
     content: "";
     position: fixed;
@@ -49,77 +70,79 @@ h1, h2, h3 {
 
 .hero {
     border: 1px solid rgba(56, 189, 248, .24);
-    border-radius: 8px;
-    padding: 28px;
-    background: linear-gradient(135deg, rgba(15, 23, 42, .78), rgba(14, 116, 144, .18));
-    box-shadow: 0 20px 70px rgba(0, 212, 170, .08);
-    backdrop-filter: blur(18px);
-    margin-bottom: 18px;
+    border-radius: 12px;
+    padding: 32px;
+    background: linear-gradient(135deg, rgba(15, 23, 42, .85), rgba(14, 116, 144, .25));
+    box-shadow: 0 25px 80px rgba(0, 212, 170, .1);
+    backdrop-filter: blur(24px);
+    margin-bottom: 24px;
+    border-left: 5px solid var(--teal);
 }
 
 .hero .eyebrow {
     color: var(--teal);
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
-    font-size: .78rem;
+    font-size: .85rem;
+    letter-spacing: 1.2px;
 }
 
 .hero h1 {
-    font-size: clamp(2rem, 4vw, 3.8rem);
-    line-height: 1.02;
-    margin: 8px 0 10px;
+    font-size: clamp(2.2rem, 5vw, 4.2rem);
+    line-height: 1.1;
+    margin: 12px 0 14px;
+    font-weight: 800;
 }
 
 .hero p {
-    color: #bfdbfe;
-    font-size: 1.02rem;
-    max-width: 960px;
+    color: #cbd5e1;
+    font-size: 1.1rem;
+    max-width: 900px;
+    line-height: 1.6;
 }
 
 .glass-card {
-    border: 1px solid rgba(148, 163, 184, .22);
-    border-radius: 8px;
-    padding: 18px;
-    background: rgba(15, 23, 42, .58);
-    box-shadow: 0 18px 55px rgba(0, 0, 0, .24);
-    backdrop-filter: blur(18px);
-    transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
-    min-height: 124px;
-    overflow: hidden;
-    overflow-wrap: anywhere;
-    word-break: normal;
+    border: 1px solid rgba(148, 163, 184, .25);
+    border-radius: 12px;
+    padding: 22px;
+    background: rgba(15, 23, 42, .65);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
+    backdrop-filter: blur(20px);
+    transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .glass-card:hover {
-    transform: translateY(-3px);
-    border-color: rgba(0, 212, 170, .55);
-    box-shadow: 0 18px 60px rgba(0, 212, 170, .12);
+    transform: translateY(-6px);
+    border-color: var(--teal);
+    box-shadow: 0 20px 70px rgba(0, 212, 170, .15);
+    background: rgba(15, 23, 42, .75);
 }
 
 .metric-label {
-    color: #93c5fd;
-    font-size: .72rem;
+    color: #94a3b8;
+    font-size: .8rem;
     text-transform: uppercase;
-    font-weight: 700;
-    line-height: 1.35;
-    max-width: 100%;
+    font-weight: 800;
+    letter-spacing: 0.5px;
 }
 
 .metric-value {
-    font-size: clamp(1.2rem, 2vw, 1.9rem);
-    font-weight: 800;
-    color: #f8fafc;
-    margin-top: 8px;
-    line-height: 1.1;
-    max-width: 100%;
+    font-size: clamp(1.4rem, 2.5vw, 2.4rem);
+    font-weight: 900;
+    color: #ffffff;
+    margin-top: 10px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 .metric-note {
-    color: #94a3b8;
-    font-size: .82rem;
-    margin-top: 8px;
-    line-height: 1.45;
-    max-width: 100%;
+    color: #64748b;
+    font-size: .85rem;
+    margin-top: 10px;
+    line-height: 1.5;
 }
 
 .metric-grid {
